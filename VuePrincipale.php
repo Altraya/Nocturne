@@ -17,7 +17,16 @@ function finTableau(){
 function titreTableauTodoList(){
 	$vue = '';
 	$vue .='
-		<th>Etat<th>
+		<tr>
+			<th>Etat</th>
+			<th>Item</th>
+			<th>Priorité</th>
+			<th>Tache</th>
+			<th>Heure début</th>
+			<th>Heure fin</th>
+			<th>Heure début</th>
+			<th>Heure fin</th>
+		</tr>
 	';
 	echo($vue);
 }
