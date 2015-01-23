@@ -14,7 +14,7 @@ Exemple : ToDO List de Julien Renard
 */
 function afficherDebutPage($prenom, nom){
 	$affiche = '';
-	$affiche+= '<h1> ToDo List de '.$prenom.' '.$nom.' 
+	$affiche += '<h1> ToDo List de '.$prenom.' '.$nom.' </h1>
 	';
 
 	echo($affiche);
