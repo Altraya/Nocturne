@@ -17,10 +17,9 @@ ou de fin (pour terminer) sont mises a jour avec le timestamp correspondant au m
 
 */
 	//include des vues et modèles
-	//require_once('../ModelePrincipale.php');
-	//require_once('../VuePrincipale.php');
+	require_once('../ModelePrincipale.php');
+	require_once('../VuePrincipale.php');
 	require_once('VueTODOListe.php');
-
 	require_once('ModeleTODOListe.php');
 
 	//récupération du prenom et du nom du membre depuis la bdd
@@ -31,5 +30,9 @@ ou de fin (pour terminer) sont mises a jour avec le timestamp correspondant au m
 
 	//affichage du titre sur la page
 	afficherDebutPage($prenom, $nom);
+
+	debutTableau();
+		titreTableauTodoList();
+	finTableau();
 
 ?>
