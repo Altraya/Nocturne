@@ -12,11 +12,10 @@ Exemple : ToDO List de Julien Renard
 	prenom : prenom du membre connecté
 	nom : nom du membre connecté
 */
-function afficherDebutPage($prenom, nom){
+function afficherDebutPage($prenom, $nom){
 	$affiche = '';
-	$affiche += '<h1> ToDo List de '.$prenom.' '.$nom.' </h1>
+	$affiche .= '<h1> ToDo List de '.$prenom.' '.$nom.' </h1>
 	';
-
 	echo($affiche);
 } 
 ?>

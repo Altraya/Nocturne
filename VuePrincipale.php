@@ -14,4 +14,12 @@ function finTableau(){
 	echo('</table>');
 }
 
+function titreTableauTodoList(){
+	$vue = '';
+	$vue .='
+		<th>Etat<th>
+	';
+	echo($vue);
+}
+
 ?>
