@@ -16,4 +16,20 @@ RG8 : au clic sur le bouton commencer ou terminer, les heures réelles de début
 ou de fin (pour terminer) sont mises a jour avec le timestamp correspondant au moment du clic. 
 
 */
+	echo('Debug');
+	//include des vues et modèles
+	require_once('ModelePrincipale.php');
+	require_once('VuePrincipale.php');
+	require_once('VueTODOListe.php');
+	require_once('ModeleTODOListe.php');
+
+	echo('ok');
+	//récupération du prenom et du nom du membre depuis la bdd
+
+	//DEBUG TEST :
+	$prenom = 'Julien';
+	$nom = 'Renard';
+
+	//affichage du titre sur la page
+	afficherDebutPage($prenom, $nom);
 ?>
