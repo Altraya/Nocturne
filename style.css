@@ -1,0 +1,67 @@
+#title {
+	font-size: 32px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 0px;
+}
+	
+	#teamName, #grayText {
+		font-size: 16px;
+		font-weight: normal;
+		text-align: inherit;
+	}
+
+	#grayText {
+		margin-bottom: 0px;
+		margin-top: 10px;
+		color: #AAA; !important
+	}
+
+	#title .progress {
+		margin-left: 25%;
+		margin-right: 25%;
+		margin-top: 0px;
+	}
+
+#ganttContainer {
+	margin-top: 32px;
+}
+
+	.npTag {
+		font-size: 10px;
+	}
+
+	.delTag {
+		transition-property: color;
+		transition-duration: 0.4s;
+	}
+
+	.delTag:hover {
+		color: #D00;
+		transition-property: color;
+		transition-duration: 0.4s;
+	}
+
+	.editTag {
+		transition-property: color;
+		transition-duration: 0.4s;
+	}
+
+	.editTag:hover {
+		color: orange;
+		transition-property: color;
+		transition-duration: 0.4s;
+	}
+
+	.cmplTag {
+		color: #0B0;
+	}
+
+	.prgTag {
+		color: orange;
+	}
+
+	.actionTag {
+		text-align: center; !important
+		cursor: pointer;
+	}
