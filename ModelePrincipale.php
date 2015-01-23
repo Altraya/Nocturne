@@ -7,7 +7,7 @@
 //Permet de se connecter à la DB avec un PDO
 function void connexionBDD($bdd)
 {
-		try {
+	try {
 
 		$bdd = new PDO('mysql:host=localhost;dbname=nuit_du_projet','root','');
 		
