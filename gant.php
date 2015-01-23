@@ -3,7 +3,7 @@
 	<meta charset="utf-8">
 	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
 	<link href="fa/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="style.css" rel="stylesheet">
+	<link href="css/styleGant.css" rel="stylesheet">
 	<title>Planification</title>
 </head>
 <body>
