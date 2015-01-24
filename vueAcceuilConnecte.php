@@ -1,5 +1,7 @@
 <?php 
 
+	require_once"modeleAcceuilConnecte.php";
+
 	/*Permet de suivre l'avancement de chaque groupe au fil de la nuit*/
 
 	function creationTitreAvancement(){
@@ -15,7 +17,6 @@
 			<div class="container">
 				<div class="row">
 					<ul>
-						'.afficheAvancementEquipe().'
 					</ul>
 				</div>
 			</div>

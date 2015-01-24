@@ -1,22 +1,39 @@
 <?php
 
-	require_once"vueAcceuilConnecté.php";
-	require_once"VuePrincipale.php";
-
 	require_once"ModelePrincipale.php";
 
 	//Retourne les lignes d'avancement des équipes
-	//notamment nom + taux d'avancement
-	function afficheAvancementEquipe(){
+	//retourne le nom
+	function recupereNomEquipe(){
+		$data = array();
+
 		connexionBDD($bdd);
-		$query = $bdd->prepare("")
+		$query = $bdd->prepare("SELECT GRP_LIB FROM tm_group_grp;");
+		$query->execute();
+		while($donne = $query->fetch(PDO::FETCH_ASSOC))
+			{
+				$donne = $data[];
+			}
+
+		return $data;
 	}
 
-	//Head
-	head();
+	function recupereTauxAvancement(){
+		$data = array();
 
-	//creation de la barre de navigation du haut
-	creationNavbar();
+		/*connexionBDD($bdd);
+		$query = $bdd->prepare("SELECT GRP_LIB FROM tm_group_grp;");
+		$query->execute();
+		while($donne = $query->fetch(PDO::FETCH_ASSOC))
+			{
+				$donne = $data[];
+			}
+
+		return $data;
+		*/
+
+	}
+
 
 
 
