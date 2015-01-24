@@ -66,8 +66,11 @@ function creationNavbar(){
 			        <li class="dropdown">
 			        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jury<span class="caret"></span></a>
 			        	<ul class="dropdown-menu" role="menu">
-			          		<li><a href="#">NomEquipe1</a></li> <!-- *TODO* On va echo la liste des equipes dans le dropdown afin de pouvoir avoir un acces a tous les groupes -->
-			          		<li><a href="#">NomEquipe2</a></li>
+			        	';
+		foreach ($data as $key => $value) {
+			$vue.='<li><a href="./jury/NoteGroupe.php?id="'.$value["PK_GRP"].'>'.$value["GRP_LIB"].'</a></li>';
+		}
+			        $vue.='
 			        	</ul>
 
 			        </li>
