@@ -24,7 +24,7 @@ ou de fin (pour terminer) sont mises a jour avec le timestamp correspondant au m
 	require_once('../VuePrincipale.php');
 	require_once('VueTODOListe.php');
 	require_once('ModeleTODOListe.class.php');
-
+	head();
 	$bdd = connexionBDD();
 	$modeleTODOListe = new ModeleTODOListe($bdd);
 	$vue = new VueTODOListe($bdd);
@@ -69,7 +69,7 @@ ou de fin (pour terminer) sont mises a jour avec le timestamp correspondant au m
 				$heureExplode = explode(':', $heureExplode); //divise en 3 => donne 03 00 00
 
 				//met l'heure en min pour qu'on puisse comparer
-				$heure = (int) $heureExplode[0];
+				/*$heure = (int) $heureExplode[0];
 				$min = (int) $heureExplode[1];
 				$heureReelCompare =  '';
 				$heureReelCompare .= $heure;
@@ -85,10 +85,13 @@ ou de fin (pour terminer) sont mises a jour avec le timestamp correspondant au m
 
 				//si on a deja commencé la tache donc que l'heure actuelle est apres l'heure de debut de la tache
 				//if($heureReelCompare < (string) date("H:i")){
-				if($debugRandom){
 
-					$vue->heureReelDebut($heureReelDebut);
+
+					//$vue->heureReelDebut($heureReelDebut);
 					
+				}*/
+				foreach ($taches as $tacheuh => $tache) {
+					$vue->ligneTableauTodoList($tache);
 				}
 
 				//$vue->ligneTableauTodoList($taches);

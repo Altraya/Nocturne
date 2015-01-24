@@ -70,14 +70,14 @@ class VueTODOListe{
 		$vue = '';
 		$vue .= '
 			<tr>
-				<td>'.$donnees[0]["TSK_state"].'</td>
-				<td>'.$donnees[0]["ITM_LIB"].'</td>
-				<td>'.$donnees[0]["ITM_priority"].'</td>
-				<td>'.$donnees[0]["TSK_LIB"].'</td>
-				<td>'.$donnees[0]["TSK_start_hour_plan"].'</td>
-				<td>'.$donnees[0]["TSK_end_hour_plan"].'</td>
-				<td>'.$donnees[0]["TSK_start_hour_real"].'</td>
-				<td>'.$donnees[0]["TSK_end_hour_real"].'</td>
+				<td>'.$donnees["TSK_state"].'</td>
+				<td>'.$donnees["ITM_LIB"].'</td>
+				<td>'.$donnees["ITM_priority"].'</td>
+				<td>'.$donnees["TSK_LIB"].'</td>
+				<td>'.$donnees["TSK_start_hour_plan"].'</td>
+				<td>'.$donnees["TSK_end_hour_plan"].'</td>
+				<td>'.$donnees["TSK_start_hour_real"].'</td>
+				<td>'.$donnees["TSK_end_hour_real"].'</td>
 			</tr>
 		';
 		echo($vue);
@@ -86,7 +86,7 @@ class VueTODOListe{
 	public function heureReelDebut($heureDebut){
 		echo("<td>'.$heureDebut.'</td>");
 	}
-	
+
 	public function todoListSansHeuresReels($donnees){
 		$vue = '';
 		$vue .= '

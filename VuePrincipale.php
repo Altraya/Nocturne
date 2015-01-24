@@ -37,7 +37,7 @@
 
 //demarre un tableau
 function debutTableau(){
-	echo('<table>');
+	echo('<table class="table">');
 }
 
 //ferme un tableau
