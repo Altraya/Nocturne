@@ -26,47 +26,47 @@
 		*/
 		public function __construct($n, $r, $b, $e, $isnp, $candel)
 		{
-			$name = $n;
-			$res = $r;
-			$begin = $b;
-			$end = $e;
-			$progress = 0;		//0 à la création
+			$this->name = $n;
+			$this->res = $r;
+			$this->begin = $b;
+			$this->end = $e;
+			$this->progress = 0;		//0 à la création
 
-			$np = $isnp;
-			$state = 0;			//La tâche n'a pas commencé
-			$canEdit = true;	//Puisque la tâche n'a pas commencé, on peut l'éditer
-			$del = $candel;
+			$this->np = $isnp;
+			$this->state = 0;			//La tâche n'a pas commencé
+			$this->canEdit = true;	//Puisque la tâche n'a pas commencé, on peut l'éditer
+			$this->del = $candel;
 		}
 
 		//Renvoie le nom de la tâche
 		public function getName()
 		{
-			return $name;
+			return $this->name;
 		}
 
 		//Renvoie le nom de la ressource affectée
 		public function getRes()
 		{
-			return $res;
+			return $this->res;
 		}
 
 		//Renvoie l'heure (H24) de début de la tâche
 		public function getBegin()
 		{
-			return $begin;
+			return $this->begin;
 		}
 
 		//Renvoie l'heure (H24) panifiée de fin
 		public function getEnd()
 		{
-			return $end;
+			return $this->end;
 		}
 
 		//Renvoie la durée planifiée de la tache
 		public function getLength()
 		{
-			$res = $end - $begin;
-			if($end <= $begin)
+			$res = $this->end - $this->begin;
+			if($this->end <= $this->begin)
 			{
 				$res += 24;		//Si l'heure de fin est plus petite que l'heure de début, c'est probablement qu'elle est le jour suivant
 			}
@@ -77,60 +77,60 @@
 		//Renvoie le progrès actuel de la tache
 		public function getProgress()
 		{
-			return $progress;
+			return $this->progress;
 		}
 
 		//Renvoie si la tâche est NP ou non
 		public function isNP()
 		{
-			return $np;
+			return $this->np;
 		}
 
 		//Renvoie si la tache peut être éditée ou non
 		public function canEdit()
 		{
-			return $edit;
+			return $this->edit;
 		}
 
 		//Renvoie si la tache peut être supprimée ou non
 		public function canDel()
 		{
-			return $del;
+			return $this->del;
 		}
 
 		//Renvoie l'état actuel de la tache
 		public function getState()
 		{
-			return $state;
+			return $this->state;
 		}
 
 		//Renvoie une ligne de tableau HTML avec tout qui va bien
 		public function toString()
 		{
 			$html = '	<tr>
-							<td>' . $name . '</td>
-							<td>' . $res . '</td>
-							<td>' . $begin . '</td>
-							<td>' . $end . '</td>
+							<td>' . $this->name . '</td>
+							<td>' . $this->res . '</td>
+							<td>' . $this->begin . '</td>
+							<td>' . $this->end . '</td>
 							<td colspan="12">
-								<div class="progress" style="margin-left: ' . calcLeftM() . '%; margin-right: ' . calcRightM() . '%">
-									<div class="progress-bar ' . ($progress == 100 ? 'progress-bar-success' : 'progress-bar-warning progress-bar-striped active') . 
-									'" role="progressbar" aria-valuenow="' . $progress . '" aria-valuemin="0" aria-valuemax="100" style="width:100%;">' .
-										((($progress != 0) && ($progress != 100)) ? $progress : '')
+								<div class="progress" style="margin-left: ' . $this->calcLeftM() . '%; margin-right: ' . $this->calcRightM() . '%">
+									<div class="progress-bar ' . ($this->progress == 100 ? 'progress-bar-success' : 'progress-bar-warning progress-bar-striped active') . 
+									'" role="progressbar" aria-valuenow="' . $this->progress . '" aria-valuemin="0" aria-valuemax="100" style="width:100%;">' .
+										((($this->progress != 0) && ($this->progress != 100)) ? $this->progress : '')
 									. '</div>
 						  		</div>
 							</td>
 							<td class="actionTag npTag">' .
-								($np ? '(NP)' : '')
+								($this->np ? '(NP)' : '')
 							. '</td>
 							<td class="actionTag editTag">' .
-								($edit ? '<i class="fa fa-pencil"></i>' : '' )
+								($this->edit ? '<i class="fa fa-pencil"></i>' : '' )
 							. '</td>
 			 				<td class="actionTag delTag">' .
-			 					($del ? '<i class="fa fa-trash"></i>' : '')
+			 					($this->del ? '<i class="fa fa-trash"></i>' : '')
 			 				. '</td>
 			 				<td class="actionTag cmplTag">' .
-			 					($state == 1 ? '<i class="fa fa-clock-o"></i>' : ($state == 2 ? '<i class="fa fa-check"></i>' : ''))
+			 					($this->state == 1 ? '<i class="fa fa-clock-o"></i>' : ($this->state == 2 ? '<i class="fa fa-check"></i>' : ''))
 			 				. '</td>
 						</tr>';
 			//Ternaires dégueulasses pour remplir la ligne du tableau en fonction des attributs de l'objet
@@ -149,25 +149,25 @@
 			//12 / 2,5 = 4,8
 			//100 / 4,8 = % de marge gauche
 			//Il y a un %24 car on préfère éviter d'avoir un résultat négatif
-			return (100 / 12) * (($begin - 20) % 24);
+			return (100 / 12) * (($this->begin - 20) % 24);
 		}
 
 		//Même chose avec la marge droite
 		private function calcRightM()
 		{
-			return (100 / 12) * ((8 - $end) % 24);
+			return (100 / 12) * ((8 - $this->end) % 24);
 		}
 
 		//Modifie la progression de la tâche
 		public function setProgress($n)
 		{
-			$progress = $n;
+			$this->progress = $n;
 		}
 
 		//Modifie la ressource affectée à la tâche
 		public function setRes($r)
 		{
-			$res = $r;
+			$this->res = $r;
 		}
 	}
 ?>
