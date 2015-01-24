@@ -11,23 +11,26 @@
 		echo ($vue);
 	}
 
-	function ligneAvancementEquipe($nom, $taux){
+	function debutLigneAvancementEquipe(){
 		$vue = '
 			<div class="container">
 				<div class="row">
-					<ul>'.
-						foreach($nom as $key => $value)
-						{
-							ajouteLigne($nom[$key], $taux[$key]);
-						}
-					.'</ul>
-				</div>
-			</div>
-
+					<ul>
 		';
 
 		echo ($vue);
 	}
+
+	function finLigneAvancementEquipe(){
+		$vue = '
+					</ul>
+				</div>
+			</div>
+		';
+
+		echo ($vue);
+	}
+
 
 	function ajouteLigne($nom, $taux)
 	{
@@ -39,13 +42,7 @@
 			</div>
 		</li>';
 
-		return $vue;	
-	}
-
-	function sponsors()
-	{
-		$vue =
-		'';
+		echo ($vue);	
 	}
 
 

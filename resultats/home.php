@@ -10,16 +10,22 @@
 
 	//Affiche le titre de la page d'avancement
 	creationTitreAvancement();
-	
+
 	$nomEquipe = recupereNomEquipe();
 	$tauxEquipe = recupereTauxAvancement();
 	var_dump($nomEquipe);
 	var_dump($tauxEquipe);
 	//Affiche un tableau avec pour ligne le nom de l'équipe et son taux d'avancement
-	ligneAvancementEquipe($nomEquipe,$tauxEquipe);
+	debutLigneAvancementEquipe();
+	foreach($nomEquipe as $key => $nom)
+	{
+		$tauxAvancementItem = tauxAvancementItem($tauxEquipe);
+		ajouteLigne($nom['GRP_LIB'],$tauxAvancementItem);
+	}
+	finLigneAvancementEquipe();
 
 	//navbar vertical sponsors
-	sponsors();
+	//sponsors();
 
 
 
