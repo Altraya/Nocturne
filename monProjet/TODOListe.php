@@ -20,19 +20,42 @@ ou de fin (pour terminer) sont mises a jour avec le timestamp correspondant au m
 	require_once('../ModelePrincipale.php');
 	require_once('../VuePrincipale.php');
 	require_once('VueTODOListe.php');
-	require_once('ModeleTODOListe.php');
+	require_once('ModeleTODOListe.class.php');
+
+	$bdd = connexionBDD();
+	$modeleTODOListe = new ModeleTODOListe($bdd);
+	$vue = new VueTODOListe($bdd);
 
 	//récupération du prenom et du nom du membre depuis la bdd
 
-	//DEBUG TEST :
-	$prenom = "Julien";
-	$nom = "Renard";
+	$prenom = "jean";
+	$nom = "charles";
+	/*
+	$prenom = $_SESSION['prenom'];
+	$nom = $_SESSION['nom'];
+	*/
 
 	//affichage du titre sur la page
-	afficherDebutPage($prenom, $nom);
+	$vue->afficherDebutPage($prenom, $nom);
 
 	debutTableau();
-		titreTableauTodoList();
+	$vue->titreTableauTodoList();
+		echo('<td>');
+		//debug
+		$idUtilisateur = 1;
+		//if(isset($_SESSION['id'])){
+			//$idUtilisateur = $_SESSION['id'];
+
+
+			//recupere toutes les taches de l'utilisateur connecté
+			$taches = $modeleTODOListe->getTaches($idUtilisateur);
+			// debug var_dump($taches);
+			echo('ok cest bon');
+		/*}else{
+			errNonConnecte();
+		}*/	
+		
+		echo('</td>');
 	finTableau();
 
 ?>
