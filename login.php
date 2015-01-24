@@ -1,71 +1,41 @@
 <?php 
+session_start();
 
-require_once('ModelePrincipale.php');
+require_once('ModelePrincipale.class.php');
+require_once('vueHome.class.php');
+require_once('config.php');
 
 $bdd = connexionBDD();
 
-if(isset($_POST['email']) && isset($_POST['password'])) {
-	$login=login();
-}
+$modelePrincipale = new ModelePrincipale($bdd);
+$vue = new vueHome();
 
-	// Si il tente de se connecter
-if(isset($login)){
-	switch ($login) {
-			//réussite
-		case 1:
-			header('Location: resultats/home.php');
-			break;
+	if(isset($_POST['email']) && isset($_POST['password'])) {
+		//recupere les données envoyé par le formulaire
+		$email = htmlspecialchars($_POST['email']);
+		$pwd = sha1(htmlspecialchars($_POST['password']));
 
-			//echec
-		case 2:
-			echo "<div class = 'alert alert-success' role = 'alert'>";
-			echo "Echec de connexion.";
-			echo "</div>";
-			break;
+		//récupère le mdp en bdd de l'utilisateur
+		$pass = $modelePrincipale->getPassword($email);
+
+		//si cest le meme que rentré
+		if ($pass==$pwd){
+
+			$_SESSION['id'] = $modelePrincipale->getIdUtilisateur($email);
+
+			//récupère le nom
+			$_SESSION['nom'] = $modelePrincipale->getNom($email);
+
+			//récupère le prenom
+			$_SESSION['prenom'] = $modelePrincipale->getPrenom($email);
+
+			//redirige vers resultats/home.php
+			//header("Location: resultats/home.php");
+		}else{ 
+			//erreur pas le bon mdp
+			$vue->errMdp();
+		}
 	}
-}
 
-function login(){
-
-	$bdd = connexionBDD();
-
-	$email = htmlspecialchars($_POST['email']);
-	$pwd = sha1(htmlspecialchars($_POST['password']));
-
-		//On requete la BDD pour la vérification du mdp
-	$req = $bdd->prepare("SELECT USR_PWD FROM TM_USER_USR WHERE (:email=USR_email)");
-	$req->execute(array("email" => $email));
-	$pass = "";
-	while($data = $req->fetch(PDO::FETCH_ASSOC)){
-		$pass=$data['USR_PWD']; //récupération du hash du mot de passe dans la BDD
-	}							
-	if ($pass==$pwd){
-		
-			//récupérer l'id
-		$req = $bdd->prepare("SELECT PK_USR FROM TM_USER_USR WHERE (:email=USR_email)");
-		$req->execute(array("email" => $email));
-		$id = $req->fetch(PDO::FETCH_ASSOC);
-
-			//récupérer le nom
-		$req = $bdd->prepare("SELECT USR_name FROM TM_USER_USR WHERE (:email=USR_email)");
-		$req->execute(array("email" => $email));
-		$name = $req->fetch(PDO::FETCH_ASSOC);
-
-			//récupérer le prénom
-		$req = $bdd->prepare("SELECT USR_firstname FROM TM_USER_USR WHERE (:email=USR_email)");
-		$req->execute(array("email" => $email));
-		$firstname = $req->fetch(PDO::FETCH_ASSOC);
-
-		$_SESSION['id'] = $id;
-		$_SESSION['name'] = $name;
-		$_SESSION['firstname'] = $firstname;
-
-		return 1;
-	}
-	else
-	{ 
-		return 2;
-	}
-}
 
  ?>

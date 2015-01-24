@@ -1,6 +1,6 @@
 <?php
 	//require_once("VuePrincipale.php");
-	require_once("ModelePrincipale.php");
+	require_once("../config.php");
 	require_once("inscriptionVue.php");
 	$bdd = connexionBDD();
 	$token = sha1(uniqid('auth',true));

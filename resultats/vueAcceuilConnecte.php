@@ -11,22 +11,28 @@
 		echo ($vue);
 	}
 
-	function ligneAvancementEquipe($nom, $taux){
+	function debutLigneAvancementEquipe(){
 		$vue = '
 			<div class="container">
 				<div class="row">
 					<ul>
-						'.ajouteLigne($nom, $taux).'
-					</ul>
-				</div>
-			</div>
-
 		';
 
 		echo ($vue);
 	}
 
-	function ajouteLigne($nom, $taux);
+	function finLigneAvancementEquipe(){
+		$vue = '
+					</ul>
+				</div>
+			</div>
+		';
+
+		echo ($vue);
+	}
+
+
+	function ajouteLigne($nom, $taux)
 	{
 		$vue =  
 		'<li>'
@@ -37,12 +43,6 @@
 		</li>';
 
 		echo ($vue);	
-	}
-
-	function sponsors()
-	{
-		$vue =
-		''
 	}
 
 

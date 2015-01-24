@@ -1,5 +1,5 @@
 <?php
-require_once("VuePrincipale.php");
+require_once("../VuePrincipale.php");
 
 function formInscription($role) {
 	head();
@@ -27,7 +27,7 @@ function Ierror($type) {
 	switch ($type) {
 		case '1':
 				echo "<div class = 'alert alert-success' role = 'alert'>";
-				echo 	"Inscription effecuée ! <a href='index.php'>Retour à l'accueil</a>";
+				echo 	"Inscription effecuée ! <a href='http://localhost/Nocturne/inscription/home.php'>Retour à l'accueil</a>";
 				echo "</div>";
 			break;
 		
