@@ -13,3 +13,4 @@
 
 	//Affichage des sponsorts
 	sponsorts();
+?>
