@@ -3,12 +3,21 @@
 require_once("../VuePrincipale.php");
 require_once("./modeleNoteGroupe.php");
 require_once("./vueNoteGroupe.php");
+
 head();
 creationNavbar();
-if(isset($_GET['id']))
+if (isset($_POST['Check'])) {
+	
+	$tableauID = recupererIdItem();
+	foreach ($tableauID as $key => $value) {
+		insertData($_POST['note'.$value],$_POST['idGrp'],$value,$_POST['comment'.$value]); 
+	}
+}
+elseif(isset($_GET['id']))
 {
-	debutFormulaireJury();
+	
 	debutTableau();
+	debutFormulaireJury();
 	afficherTitre();
 	$categories= recuperationCategories();
 	foreach ($categories as $key => $value) 
@@ -23,8 +32,9 @@ if(isset($_GET['id']))
 
 
 	}
-	finTableau();
+	cacherIdentifiantGroupe($_GET['id']);
 	afficherValidation();
+	finTableau();
 	finFormulaireJury();
 }
 else
