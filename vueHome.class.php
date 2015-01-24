@@ -1,10 +1,17 @@
 <?php 
 
-	//Vue de l'acceuil
+//Vue de l'acceuil
+class vueHome{
 
 
-  //Affiche les liens vers l'inscription pour les participants et les jury
-	function affichage(){
+    private $_db;
+
+    public function __construct(){
+      
+    }
+
+    //Affiche les liens vers l'inscription pour les participants et les jury
+	public function affichage(){
 		$affichage = '<body>
 		<h1 style="text-align: center">Bienvenue à la nuit de l\'informatique</h1>
 		';
@@ -90,4 +97,9 @@
 		echo($vue);
 	}
 
- ?>
+
+    function errMdp(){
+        echo("Erreur : Vous avez saisi le mauvais mot de passe");
+    }
+};
+?>
