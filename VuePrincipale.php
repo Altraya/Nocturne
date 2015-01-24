@@ -9,7 +9,7 @@
 		<!DOCTYPE html>
 			<html lang='fr'>
 				<head>
-				    <meta charset='utf-8>
+				    <meta charset='UTF-8'>
 				    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
 				    <meta name='viewport' content='width=device-width, initial-scale=1'>
 				    <title>Accueil</title>
@@ -41,23 +41,6 @@ function debutTableau(){
 //ferme un tableau
 function finTableau(){
 	echo('</table>');
-}
-
-function titreTableauTodoList(){
-	$vue = '';
-	$vue .='
-		<tr>
-			<th>Etat</th>
-			<th>Item</th>
-			<th>Priorité</th>
-			<th>Tache</th>
-			<th>Heure début</th>
-			<th>Heure fin</th>
-			<th>Heure début</th>
-			<th>Heure fin</th>
-		</tr>
-	';
-	echo($vue);
 }
 
 function creationNavbar(){
