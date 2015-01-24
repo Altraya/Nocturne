@@ -23,7 +23,7 @@
 		$data = array();
 
 		$bdd = connexionBDD();
-		$query = $bdd->prepare("SELECT TSK_state, FROM tm_task_tsk ORDER BY FK_ITM;");
+		$query = $bdd->prepare("SELECT TSK_state,COUNT(PK_TSK) FROM tm_task_tsk ORDER BY FK_ITM;");
 		$query->execute();
 		while($donne = $query->fetch(PDO::FETCH_ASSOC))
 			{

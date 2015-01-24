@@ -35,10 +35,10 @@
 	function ajouteLigne($nom, $taux)
 	{
 		$vue =  
-		'<li>'
+		'<li class="list-unstyled">'
 			.$nom.'
 			<div class="progress" style="margin-left: 0%; margin-right: 95.833%">
-				<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow='.$taux.'aria-valuemin="0" aria-valuemax="100" style="width:100%;"></div>
+				<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow='.$taux.'aria-valuemin="0" aria-valuemax="100" style="width:100%;">'.$taux.'</div>
 			</div>
 		</li>';
 
