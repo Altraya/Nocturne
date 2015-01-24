@@ -20,10 +20,10 @@ ou de fin (pour terminer) sont mises a jour avec le timestamp correspondant au m
 	require_once('../ModelePrincipale.php');
 	require_once('../VuePrincipale.php');
 	require_once('VueTODOListe.php');
-	require_once('ModeleTODOListe.php');
+	require_once('ModeleTODOListe.class.php');
 
-	//connexion à la bdd
-	$bdd = connexionBDD();
+	connexionBDD();
+	$modeleTODOListe = new ModeleTODOListe($bdd);
 
 	//récupération du prenom et du nom du membre depuis la bdd
 
