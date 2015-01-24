@@ -5,7 +5,7 @@
 		$affichage = "<body>
 		<h1 style='text-align: center;>Bienvenue à la nuit de l'informatique</h1>
 
-		"
+		";
 
 		//Affiche les liens vers l'inscription pour les participants et les jury
 	}

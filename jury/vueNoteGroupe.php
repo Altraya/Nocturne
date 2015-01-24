@@ -12,25 +12,26 @@ function afficherLigneCategorie($nomItem)
 	echo'';
 }
 
+function afficherTitre()
+{
+	echo '<tr>
+	<th>Categorie</th>
+	<th>Progression</th>
+	<th>Notes</th>
+	<th>Commentaires</th>
+	</tr>
+	';
+}
+
 ///////////////////////////////// GESTION FORMULAIRE /////////////////////////////
-function debutFormulaire()
+function debutFormulaireJury()
 {
 	echo'<form action="./NoteGroupe.php" method="POST"';
 }
 
-function finForm()
+function finFormulaireJury()
 {
 	echo'</form>';
 }
 
-////////////////////////////// GESTION TABLEAU ////////////////////////////////
-function debutTableau()
-{
-	echo'<table>';
-}
-
-function finTableau()
-{
-	echo'</table>';
-}
 ?>
