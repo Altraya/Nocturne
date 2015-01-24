@@ -64,55 +64,60 @@ function creationNavbar(){
 	$vue = '
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
-	  <div class="container">
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-	        <span class="sr-only" >Basculer la navigation</os-p></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
+		<div class="container">
+	    	<div class="navbar-header">
+	      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		        	<span class="sr-only" >Basculer la navigation</os-p></span>
+		        	<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span>
+	      		</button>
 	      <a class="navbar-brand" href="#">Nom du projet</a>
 	    </div>
 
 
 	    <div id="navbar" class="collapse navbar-collapse">
-	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="#">Home</a></li>
-	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jury <span class="caret"></span></a>
-	        <ul class="dropdown-menu" role="menu">
-	          <li><a href="#">NomEquipe1</a></li> <!-- *TODO* On va echo la liste des equipes dans le dropdown afin de pouvoir avoir un acces a tous les groupes -->
-	          <li><a href="#">NomEquipe2</a></li>
-	        </ul>
-	        </li>
-	        <li><a href="#about">Ressources</a></li>
-	        <li><a href="#about">Resultat</a></li>
+	      	<ul class="nav navbar-nav">
+		        <li class="active"><a href="#">Home</a></li>
+			        <li class="dropdown">
+			        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jury<span class="caret"></span></a>
+			        	<ul class="dropdown-menu" role="menu">
+			          		<li><a href="#">NomEquipe1</a></li> <!-- *TODO* On va echo la liste des equipes dans le dropdown afin de pouvoir avoir un acces a tous les groupes -->
+			          		<li><a href="#">NomEquipe2</a></li>
+			        	</ul>
 
-	      </ul>
-	  
-	      <ul class="nav navbar-nav navbar-right">
-	        <li>
-	          <a class="btn btn-default" href="#">
-	            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-	          </a>
-	        </li>
-	        <li>
-	          <a class="btn btn-default" href="#">
-	            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-	          </a>
-	        </li>
-	      </ul>
+			        </li>
+		        <li><a href="#about">Ressources</a></li>
+		        <li><a href="#about">Resultat</a></li>
+		    </ul>
+		  
+		    <ul class="nav navbar-nav navbar-right">
+		        <li>
+		          	<a class="btn btn-default" href="#">
+		            	<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+		          	</a>
+		        </li>
+
+		        <li>
+		          	<a class="btn btn-default" href="#">
+		            	<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+		          	</a>
+		        </li>
+	      	</ul>
 
 	      <p class="navbar-text navbar-right">Il est :</p>
 
 	    </div><!--/.nav-collapse -->
-	  </div><!--/.container-->
+	  	</div><!--/.container-->
 	</nav>
 
 	';
 
 	echo($vue);
-}s
+	}
+
+	function errNonConnecte(){
+		echo("Erreur : Vous n'êtes pas connecté vous ne pouvez donc pas voir cette page !")
+	}
 
 ?>
