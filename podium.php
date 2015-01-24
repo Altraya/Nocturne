@@ -24,6 +24,7 @@ while ($donnees = $query1->fetch(PDO::FETCH_ASSOC)) {
 	$itm = $donnees["ITM_LIB"];
 	$score = $donnees["SCR_score"];
 
+
 	$query2 = $bdd->prepare("SELECT *, SUM(SCR_score) as somme FROM tm_score_grp_itm_scr WHERE FK_GRP=:grp GROUP BY FK_GRP");
 	$query2->execute(array("grp" => $donnees["FK_GRP"]));
 
