@@ -24,6 +24,7 @@ ou de fin (pour terminer) sont mises a jour avec le timestamp correspondant au m
 
 	$bdd = connexionBDD();
 	$modeleTODOListe = new ModeleTODOListe($bdd);
+	$vue = new VueTODOListe($bdd);
 
 	//récupération du prenom et du nom du membre depuis la bdd
 
@@ -35,10 +36,10 @@ ou de fin (pour terminer) sont mises a jour avec le timestamp correspondant au m
 	*/
 
 	//affichage du titre sur la page
-	afficherDebutPage($prenom, $nom);
+	$vue->afficherDebutPage($prenom, $nom);
 
 	debutTableau();
-		titreTableauTodoList();
+	$vue->titreTableauTodoList();
 		echo('<td>');
 		//debug
 		$idUtilisateur = 1;
@@ -48,15 +49,13 @@ ou de fin (pour terminer) sont mises a jour avec le timestamp correspondant au m
 
 			//recupere toutes les taches de l'utilisateur connecté
 			$taches = $modeleTODOListe->getTaches($idUtilisateur);
-			var_dump($taches);
+			// debug var_dump($taches);
+			echo('ok cest bon');
 		/*}else{
 			errNonConnecte();
-		}*/
-		
+		}*/	
 		
 		echo('</td>');
-
-
 	finTableau();
 
 ?>

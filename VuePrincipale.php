@@ -43,23 +43,6 @@ function finTableau(){
 	echo('</table>');
 }
 
-function titreTableauTodoList(){
-	$vue = '';
-	$vue .='
-		<tr>
-			<th>Etat</th>
-			<th>Item</th>
-			<th>Priorité</th>
-			<th>Tache</th>
-			<th>Heure début</th>
-			<th>Heure fin</th>
-			<th>Heure début</th>
-			<th>Heure fin</th>
-		</tr>
-	';
-	echo($vue);
-}
-
 function creationNavbar(){
 	$heure = date("H:i");
 	$vue = '
