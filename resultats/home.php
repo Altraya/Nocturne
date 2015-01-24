@@ -10,8 +10,11 @@
 
 	//Affiche le titre de la page d'avancement
 	creationTitreAvancement();
-	//Taux avancement par groupe
-	ligneAvancementEquipe(recupereTauxAvancement());
+	//Affiche un tableau avec pour ligne le nom de l'équipe et son taux d'avancement
+	ligneAvancementEquipe(recupereNomEquipe(),recupereTauxAvancement());
+
+	//navbar vertical sponsors
+	sponsors();
 
 
 
