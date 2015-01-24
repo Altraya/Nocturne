@@ -1,9 +1,10 @@
 <?php
 
 	require_once("VuePrincipale.php");
-
+	require_once("ModelePrincipale.php");
 	head();
 	creationNavbar();
+	$bdd = connexionBDD();
 	$token = sha1(uniqid('auth',true));
 	$_SESSION['token'] = $token;
 	
@@ -52,9 +53,9 @@
 </form>";
 
 if($form_valide){
-		$tab = valider($mail, $pwd1, $pwd2, $role); //vérification : les champs sont-ils conformes ?
-
-		if($tab["pseudo"] && $tab["mail"] && $tab["mdp"] && $tab["role"]){ //tout est valide (pseudo, mdp, mail)
+		$tab = valider($mail, $pwd1, $pwd2); //vérification : les champs sont-ils conformes ?
+		
+		if($tab["mail"] && $tab["mdp"]){ //tout est valide (pseudo, mdp, mail)
 
 		// DEBUT VALIDE
 			try {
@@ -64,7 +65,7 @@ if($form_valide){
 					"fname" => $prenom,
 					"role" => $role,
 					"mail" => $mail,
-					"mdp" => $pwd1);
+					"mdp" => $pwd1));
 			}
 			catch(PDOException $e) {
 				echo $e->getMessage();
@@ -99,11 +100,10 @@ if($form_valide){
 				echo "</div>";
 		}
 
-	sidebar();
-	foot();
 
 	function valider($mail, $mdp1, $mdp2){ //renvoit un tableau associatif booléen qui valide ou non chaque entrée (mail valide ? etc)
-		include "./config.php"; //ATTENTION SI ON LE RAJOUTE PAS CA MARCHE PLUS ALORS QU'IL EST DEFINI PLUS HAUT :(
+
+		$bdd = connexionBDD();
 		$result=array(	"mail"=>"false",
 						"mdp"=>"false");
 
@@ -122,6 +122,7 @@ if($form_valide){
 
 		//mdp
 		$result["mdp"]=($mdp1==$mdp2);
+
 
 		return $result;
 	}
