@@ -117,7 +117,7 @@ function creationNavbar(){
 	}
 
 	function errNonConnecte(){
-		echo("Erreur : Vous n'êtes pas connecté vous ne pouvez donc pas voir cette page !")
+		echo("Erreur : Vous n'êtes pas connecté vous ne pouvez donc pas voir cette page !");
 	}
 
 ?>
