@@ -47,7 +47,7 @@
 					"fname" => $prenom,
 					"role" => $role,
 					"mail" => $mail,
-					"mdp" => sha1($pwd1)));
+					"mdp" => $pwd1));
 			}
 			catch(PDOException $e) {
 				echo $e->getMessage();
