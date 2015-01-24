@@ -14,9 +14,6 @@
 	$nomEquipe = recupereNomEquipe();
 	$tauxEquipe = recupereTauxAvancement();
 
-	//DEBUG
-	var_dump($nomEquipe);
-	var_dump($tauxEquipe);
 
 	//Affiche une liste avec pour ligne le nom de l'équipe et son taux d'avancement
 	debutLigneAvancementEquipe();
