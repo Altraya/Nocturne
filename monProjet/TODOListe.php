@@ -22,7 +22,7 @@ ou de fin (pour terminer) sont mises a jour avec le timestamp correspondant au m
 	require_once('VueTODOListe.php');
 	require_once('ModeleTODOListe.class.php');
 
-	connexionBDD();
+	$bdd = connexionBDD();
 	$modeleTODOListe = new ModeleTODOListe($bdd);
 
 	//récupération du prenom et du nom du membre depuis la bdd
@@ -47,7 +47,7 @@ ou de fin (pour terminer) sont mises a jour avec le timestamp correspondant au m
 
 
 			//recupere toutes les taches de l'utilisateur connecté
-			$taches = getTaches($idUtilisateur);
+			$taches = $modeleTODOListe->getTaches($idUtilisateur);
 			var_dump($taches);
 		/*}else{
 			errNonConnecte();
