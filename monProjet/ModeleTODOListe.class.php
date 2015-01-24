@@ -4,9 +4,20 @@
 	Modèle de la todoliste :
 		Gère les requetes avec la bdd 
 */
+class ModeleTODOListe.class.php{
 
+	private $_db;
+
+	public function __construct($db){
+		$this->setDb($db);
+	}
+
+	public function setDb(PDO $db){
+		$this->_db = $db;
+	}
+	
 	//Récupère l'état, l'item, la priorité, la tache, heure de début/fin planifié puis réel des taches d'une personne précise (connectée) donné en paramètre
-	function getTaches($idPersonne){
+	public function getTaches($idPersonne){
 
 		$idPersonne = (string) $idPersonne;
 		$data = array();
@@ -21,5 +32,5 @@
 		$req->closeCursor();
 		return $data;
 	}
-	
+};	
 ?>
