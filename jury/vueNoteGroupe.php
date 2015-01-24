@@ -4,7 +4,7 @@
 //affiche les categorie selon 
 function afficherCategorie($categorie)
 {
-	echo'<tr><h2>'.$categorie.'</h2></tr>';
+	echo'<tr><td><h2>'.$categorie.'</h2></td></tr>';
 }
 
 function afficherLigneCategorie($donneesItem)
@@ -12,26 +12,25 @@ function afficherLigneCategorie($donneesItem)
 	echo'';
 }
 
+function gestionAccents()
+{
+	echo "<meta charset='UTF-8'>";
+}
+
+
+function cacherIdentifiantGroupe($id)
+{
+	echo'<input type="hidden" value='.$id.' name="idGrp"\>';
+	
+}
+
 function afficherLigneItem($valeurs)
 {
-	echo'<tr>
-	<td>
-	'.$valeurs["ITM_LIB"].'
-	</td>
-	
-	<td>
-	N/A
-	</td>
-	
-	<td>
-	<input type="text"  id="note'.$valeurs["PK_ITM"].'"\>/
-	</td>
-	
-	<td>
-	<input type="text"  id="comment'.$valeurs["PK_ITM"].'"\>
-	</td>
-
-	<tr>';
+	echo'<tr><td>'.$valeurs["ITM_LIB"].'</td>
+	<td>N/A</td>
+	<td><input type="text"  name="note'.$valeurs["PK_ITM"].'"\>/</td>
+	<td><input type="text"  name="comment'.$valeurs["PK_ITM"].'"\></td>
+	</tr>';
 }
 
 
@@ -42,7 +41,7 @@ function afficherErreur()
 
 function afficherValidation()
 {
-	echo'<input type="submit" value="Valider" id="Check"\>';
+	echo'<input type="submit" value="Valider" name="Check"\>';
 }
 
 function afficherTitre()
@@ -59,7 +58,7 @@ function afficherTitre()
 ///////////////////////////////// GESTION FORMULAIRE /////////////////////////////
 function debutFormulaireJury()
 {
-	echo'<form action="./NoteGroupe.php" method="POST"';
+	echo'<form action="./NoteGroupe.php" method="POST">';
 }
 
 function finFormulaireJury()

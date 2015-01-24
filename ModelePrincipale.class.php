@@ -58,5 +58,16 @@ public function getPrenom($email){
 	return $prenom;
 }
 
+public function getGroupe()
+{
+	$data = array();
+	$req = $this->_db->prepare("SELECT * FROM tm_group_grp");
+	$req->execute();
+	while($donnees = $req->fetch(PDO::FETCH_ASSOC))
+	{
+		$data =$donnees;
+	}
+	return $data;
+}
 };
 ?>

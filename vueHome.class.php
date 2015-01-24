@@ -25,7 +25,7 @@ class vueHome{
             <div class="row">
                 <div class="col-md-6">
                     <div class="jumbotron" style="margin-left: 24% ;">
-                        <h3 style="text-align: center; margin-top: -20px;">Nous n\'êtes pas encore inscrit</h3>
+                        <h3 style="text-align: center; margin-top: -20px;">Vous n\'êtes pas encore inscrit</h3>
                         <a href="inscription/inscriptionParticipant.php">S\'inscrire comme participant</a>
                         <a href="inscription/inscriptionJury.php">S\'inscrire comme jury</a>
                     </div>
@@ -41,13 +41,13 @@ class vueHome{
             <div class="jumbotron" style="margin-right: 24% ;">
                 <h3 style="text-align: center; margin-top: -20px;">Connectez-vous</h3>
                 <form method="post" action="login.php">
-                    email<br>
+                    Email<br>
                     <input type="text" class="form-control" id="sizing-addon2" name="email">
                     <br>
-                    mot de passe<br>
+                    Mot de passe<br>
                     <input type="password" class="form-control" id="sizing-addon2" name="password">
                     <br>
-                    <button type="submit" class="btn btn-default" value="Valider"></button>
+                    <button type="submit" class="btn btn-default" value="Valider">Valider</button>
                 </form>
             </div>
         </div>

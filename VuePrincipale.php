@@ -15,6 +15,7 @@
 				    <title>Accueil</title>
 
 				    <!-- Bootstrap -->
+				    <link href='../css/bootstrap.css' rel='stylesheet'>
 				    <link href='css/bootstrap.css' rel='stylesheet'>
 				        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 				    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'></script>
@@ -28,6 +29,7 @@
 				    	<script src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js'></script>
 				    <![endif]-->
 				</head>
+		<body>
 		";
   		echo($head);
 	}
@@ -35,7 +37,7 @@
 
 //demarre un tableau
 function debutTableau(){
-	echo('<table>');
+	echo('<table class="table">');
 }
 
 //ferme un tableau
@@ -56,23 +58,22 @@ function creationNavbar(){
 		        	<span class="icon-bar"></span>
 		        	<span class="icon-bar"></span>
 	      		</button>
-	      <a class="navbar-brand" href="#">Nom du projet</a>
+	      <a class="navbar-brand" href="home.php">Projet</a>
 	    </div>
 
 
 	    <div id="navbar" class="collapse navbar-collapse">
 	      	<ul class="nav navbar-nav">
-		        <li class="active"><a href="#">Home</a></li>
+		        <li class="active"><a href="home.php">Home</a></li>
 			        <li class="dropdown">
 			        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jury<span class="caret"></span></a>
 			        	<ul class="dropdown-menu" role="menu">
-			          		<li><a href="#">NomEquipe1</a></li> <!-- *TODO* On va echo la liste des equipes dans le dropdown afin de pouvoir avoir un acces a tous les groupes -->
-			          		<li><a href="#">NomEquipe2</a></li>
+			        	
 			        	</ul>
 
 			        </li>
 		        <li><a href="#about">Ressources</a></li>
-		        <li><a href="#about">Resultat</a></li>
+		        <li><a href="resultats/home.php">Resultat</a></li>
 		    </ul>
 		  
 		    <ul class="nav navbar-nav navbar-right">

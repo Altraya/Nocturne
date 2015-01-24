@@ -13,9 +13,9 @@
 
 	$nomEquipe = recupereNomEquipe();
 	$tauxEquipe = recupereTauxAvancement();
-	var_dump($nomEquipe);
-	var_dump($tauxEquipe);
-	//Affiche un tableau avec pour ligne le nom de l'équipe et son taux d'avancement
+
+
+	//Affiche une liste avec pour ligne le nom de l'équipe et son taux d'avancement
 	debutLigneAvancementEquipe();
 	foreach($nomEquipe as $key => $nom)
 	{
@@ -26,7 +26,5 @@
 
 	//navbar vertical sponsors
 	//sponsors();
-
-
 
 ?>

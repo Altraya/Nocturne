@@ -35,6 +35,8 @@ $vue = new vueHome();
 			//erreur pas le bon mdp
 			$vue->errMdp();
 		}
+
+		header("Location: resultats/home.php");
 	}
 
 

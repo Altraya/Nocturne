@@ -107,6 +107,14 @@
  				<td class="actionTag prgTag"><i class="fa fa-clock-o"></i></td>
 			</tr>
 		</table>
+		<?php
+			require 'gantMan.obj.php';
+			$GM = new GantManager();
+			$n = rand(5, 15);
+			$GM->build($n);
+
+			echo($GM->toString());
+		?>
 	</div>
 </body>
 </html>

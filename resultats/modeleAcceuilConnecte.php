@@ -1,6 +1,7 @@
 <?php
 
-	require_once("../ModelePrincipale.php");
+	require_once("../ModelePrincipale.class.php");
+	require_once("../config.php");
 
 	//Retourne les lignes d'avancement des équipes
 	//retourne le nom
@@ -23,7 +24,7 @@
 		$data = array();
 
 		$bdd = connexionBDD();
-		$query = $bdd->prepare("SELECT TSK_state, FROM tm_task_tsk ORDER BY FK_ITM;");
+		$query = $bdd->prepare("SELECT TSK_state,COUNT(PK_TSK) FROM tm_task_tsk ORDER BY FK_ITM;");
 		$query->execute();
 		while($donne = $query->fetch(PDO::FETCH_ASSOC))
 			{
