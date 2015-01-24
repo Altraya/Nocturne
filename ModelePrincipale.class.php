@@ -52,12 +52,10 @@ public function getNom($email){
 
 //récupère le prenom de l'utilisateur dont on donne le mail
 public function getPrenom($email){
-
-	//récupérer le prénom
 	$req = $this->_db->prepare("SELECT USR_firstname FROM TM_USER_USR WHERE (:email=USR_email)");
 	$req->execute(array("email" => $email));
-	$firstname = $req->fetch(PDO::FETCH_ASSOC);
-
+	$prenom = $req->fetch(PDO::FETCH_ASSOC);
+	return $prenom;
 }
 
 };

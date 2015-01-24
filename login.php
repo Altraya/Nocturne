@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 require_once('ModelePrincipale.class.php');
 require_once('vueHome.class.php');
@@ -29,7 +30,7 @@ $vue = new vueHome();
 			$_SESSION['prenom'] = $modelePrincipale->getPrenom($email);
 
 			//redirige vers resultats/home.php
-			header("Location: resultats/home.php");
+			//header("Location: resultats/home.php");
 		}else{ 
 			//erreur pas le bon mdp
 			$vue->errMdp();
