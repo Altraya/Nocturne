@@ -30,6 +30,4 @@
 	//navbar vertical sponsors
 	//sponsors();
 
-
-
 ?>

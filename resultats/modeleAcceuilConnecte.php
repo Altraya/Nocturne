@@ -1,6 +1,7 @@
 <?php
 
-	require_once("../ModelePrincipale.php");
+	require_once("../ModelePrincipale.class.php");
+	require_once("../config.php");
 
 	//Retourne les lignes d'avancement des équipes
 	//retourne le nom
