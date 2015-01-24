@@ -62,7 +62,7 @@
 				<td>21h30</td>
 				<td colspan="12">
 					<div class="progress" style="margin-left: 0%; margin-right: 87.5%">
-						<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100" style="width:47%;">
+						<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100" style="width:47%;">
 							47%
 						</div>
 			  		</div>
@@ -79,7 +79,7 @@
 				<td>22h00</td>
 				<td colspan="12">
 					<div class="progress" style="margin-left: 4.167%; margin-right: 83.333%">
-						<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100" style="width:86%;">
+						<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100" style="width:86%;">
 							86%
 						</div>
 			  		</div>
@@ -96,7 +96,7 @@
 				<td>05h30</td>
 				<td colspan="12">
 					<div class="progress" style="margin-left: 20.833%; margin-right: 12.5%">
-						<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100" style="width:86%;">
+						<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100" style="width:86%;">
 							86%
 						</div>
 			  		</div>
