@@ -38,8 +38,7 @@ function login(){
 	$pass = "";
 	while($data = $req->fetch(PDO::FETCH_ASSOC)){
 		$pass=$data['USR_PWD']; //récupération du hash du mot de passe dans la BDD
-	}
-		$pass = sha1(htmlspecialchars($pass));							
+	}							
 	if ($pass==$pwd){
 		
 			//récupérer l'id
