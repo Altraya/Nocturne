@@ -24,15 +24,24 @@ ou de fin (pour terminer) sont mises a jour avec le timestamp correspondant au m
 
 	//récupération du prenom et du nom du membre depuis la bdd
 
-	//DEBUG TEST :
-	$prenom = "Julien";
-	$nom = "Renard";
+	$prenom = "jean";
+	$nom = "charles";
+	/*
+	$prenom = $_SESSION['prenom'];
+	$nom = $_SESSION['nom'];
+	*/
 
 	//affichage du titre sur la page
 	afficherDebutPage($prenom, $nom);
 
 	debutTableau();
 		titreTableauTodoList();
+		echo('<td>');
+		$taches = getTaches();
+		var_dump($taches);
+		echo('</td>');
+
+
 	finTableau();
 
 ?>
