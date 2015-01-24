@@ -16,8 +16,11 @@ RG8 : au clic sur le bouton commencer ou terminer, les heures réelles de début
 ou de fin (pour terminer) sont mises a jour avec le timestamp correspondant au moment du clic. 
 
 */
+	session_start();
+
 	//include des vues et modèles
-	require_once('../ModelePrincipale.php');
+	require_once('../config.php');
+	require_once('../ModelePrincipale.class.php');
 	require_once('../VuePrincipale.php');
 	require_once('VueTODOListe.php');
 	require_once('ModeleTODOListe.class.php');
@@ -28,34 +31,39 @@ ou de fin (pour terminer) sont mises a jour avec le timestamp correspondant au m
 
 	//récupération du prenom et du nom du membre depuis la bdd
 
-	$prenom = "jean";
-	$nom = "charles";
-	/*
-	$prenom = $_SESSION['prenom'];
-	$nom = $_SESSION['nom'];
-	*/
+	/*$prenom = "jean";
+	$nom = "charles";*/
 
-	//affichage du titre sur la page
-	$vue->afficherDebutPage($prenom, $nom);
+	//si on est bien connecté, on recupere l'id nom prenom du membre co
+	if(isset($_SESSION['id'])){
+		var_dump($_SESSION['id']);
+		var_dump($_SESSION['prenom']);
+		var_dump($_SESSION['nom']);
 
-	debutTableau();
-	$vue->titreTableauTodoList();
+		$prenom = $_SESSION['prenom'];
+		$nom = $_SESSION['nom'];
+	
+
+		//affichage du titre sur la page
+		$vue->afficherDebutPage($prenom, $nom);
+
+		debutTableau();
+		$vue->titreTableauTodoList();
 		echo('<td>');
 		//debug
-		$idUtilisateur = 1;
-		//if(isset($_SESSION['id'])){
-			//$idUtilisateur = $_SESSION['id'];
+		$idUtilisateur = $_SESSION['id'];
 
 
-			//recupere toutes les taches de l'utilisateur connecté
-			$taches = $modeleTODOListe->getTaches($idUtilisateur);
-			// debug var_dump($taches);
-			echo('ok cest bon');
-		/*}else{
-			errNonConnecte();
-		}*/	
-		
+		//recupere toutes les taches de l'utilisateur connecté
+		$taches = $modeleTODOListe->getTaches($idUtilisateur);
+		// debug var_dump($taches);
+		echo('ok cest bon');	
 		echo('</td>');
-	finTableau();
+		finTableau();
+	}else{
+		errNonConnecte();
+	}	
+		
+	
 
 ?>

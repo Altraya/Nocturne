@@ -1,18 +1,23 @@
 <?php 
 
-	require_once"vueHome.php";
+	require_once"vueHome.class.php";
 	require_once"VuePrincipale.php";
+	require_once"config.php";
+
+	$bdd = connexionBDD();
+
 	
+	$vue = new vueHome($bdd);
+
 	head();
 
 	//Création de compte 		
-	creationCompte();
+	$vue->creationCompte();
 	
-
 	// Connection 
-	afficherFormulaireConnection(); 
+	$vue->afficherFormulaireConnection(); 
 	
 
 	//Affichage des sponsorts
-	sponsors();
+	$vue->sponsors();
 ?>

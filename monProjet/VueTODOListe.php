@@ -23,6 +23,9 @@ class VueTODOListe{
 		nom : nom du membre connecté
 	*/
 	public function afficherDebutPage($prenom, $nom){
+		$prenom = (String) $prenom;
+		$nom = (String) $nom;
+
 		$affiche = '';
 		$affiche .= '<h1> ToDo List de '.$prenom.' '.$nom.' </h1>
 		';
