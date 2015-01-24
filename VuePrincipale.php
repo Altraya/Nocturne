@@ -61,6 +61,7 @@ function titreTableauTodoList(){
 }
 
 function creationNavbar(){
+	$heure = date("H:i");
 	$vue = '
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -104,7 +105,7 @@ function creationNavbar(){
 	        </li>
 	      </ul>
 
-	      <p class="navbar-text navbar-right">Il est :</p>
+	      <p class="navbar-text navbar-right">Il est :'.$heure.'</p>
 
 	    </div><!--/.nav-collapse -->
 	  </div><!--/.container-->
