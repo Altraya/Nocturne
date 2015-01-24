@@ -15,9 +15,12 @@
 		$vue = '
 			<div class="container">
 				<div class="row">
-					<ul>
-						'.ajouteLigne($nom, $taux).'
-					</ul>
+					<ul>'.
+						foreach($nom as $key => $value)
+						{
+							ajouteLigne($nom[$key], $taux[$key]);
+						}
+					.'</ul>
 				</div>
 			</div>
 
@@ -26,7 +29,7 @@
 		echo ($vue);
 	}
 
-	function ajouteLigne($nom, $taux);
+	function ajouteLigne($nom, $taux)
 	{
 		$vue =  
 		'<li>'
@@ -36,13 +39,13 @@
 			</div>
 		</li>';
 
-		echo ($vue);	
+		return $vue;	
 	}
 
 	function sponsors()
 	{
 		$vue =
-		''
+		'';
 	}
 
 

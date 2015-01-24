@@ -23,7 +23,7 @@
 		$data = array();
 
 		$bdd = connexionBDD();
-		$query = $bdd->prepare("SELECT GRP_LIB FROM tm_group_grp;");
+		$query = $bdd->prepare("SELECT TSK_start_hour_real, TSK_end_hour_real, TSK_start_hour_plan, TSK_end_hour_plan FROM tm_group_grp;");
 		$query->execute();
 		while($donne = $query->fetch(PDO::FETCH_ASSOC))
 			{
