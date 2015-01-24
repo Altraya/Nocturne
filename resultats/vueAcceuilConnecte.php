@@ -11,13 +11,16 @@
 		echo ($vue);
 	}
 
-	function ligneAvancementEquipe($nom){
+	function ligneAvancementEquipe($nom, $taux){
 		$vue = '
 			<div class="container">
 				<div class="row">
-					<ul>
-						<li>'.$nom.'</li>
-					</ul>
+					<ul>'.
+						foreach($nom as $key => $value)
+						{
+							ajouteLigne($nom[$key], $taux[$key]);
+						}
+					.'</ul>
 				</div>
 			</div>
 
@@ -26,6 +29,24 @@
 		echo ($vue);
 	}
 
+	function ajouteLigne($nom, $taux)
+	{
+		$vue =  
+		'<li>'
+			.$nom.'
+			<div class="progress" style="margin-left: 0%; margin-right: 95.833%">
+				<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow='.$taux.'aria-valuemin="0" aria-valuemax="100" style="width:100%;"></div>
+			</div>
+		</li>';
+
+		return $vue;	
+	}
+
+	function sponsors()
+	{
+		$vue =
+		'';
+	}
 
 
  ?>

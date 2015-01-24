@@ -10,8 +10,16 @@
 
 	//Affiche le titre de la page d'avancement
 	creationTitreAvancement();
-	//Taux avancement par groupe
-	ligneAvancementEquipe(recupereTauxAvancement());
+	
+	$nomEquipe = recupereNomEquipe();
+	$tauxEquipe = recupereTauxAvancement();
+	var_dump($nomEquipe);
+	var_dump($tauxEquipe);
+	//Affiche un tableau avec pour ligne le nom de l'équipe et son taux d'avancement
+	ligneAvancementEquipe($nomEquipe,$tauxEquipe);
+
+	//navbar vertical sponsors
+	sponsors();
 
 
 
