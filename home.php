@@ -1,6 +1,6 @@
 <?php 
 
-	require_once"vueAcceuil.php";
+	require_once"vueHome.php";
 
 
 	//Création de compte 		
@@ -12,5 +12,5 @@
 	
 
 	//Affichage des sponsorts
-	sponsorts();
+	sponsors();
 ?>
