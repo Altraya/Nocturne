@@ -4,7 +4,7 @@
 	require_once("ModelePrincipale.php");
 	head();
 	creationNavbar();
-	connexionBDD();
+	$bdd = connexionBDD();
 	$token = sha1(uniqid('auth',true));
 	$_SESSION['token'] = $token;
 	
@@ -53,9 +53,9 @@
 </form>";
 
 if($form_valide){
-		$tab = valider($mail, $pwd1, $pwd2, $role); //vérification : les champs sont-ils conformes ?
+		$tab = valider($mail, $pwd1, $pwd2); //vérification : les champs sont-ils conformes ?
 		
-		if($tab["pseudo"] && $tab["mail"] && $tab["mdp"] && $tab["role"]){ //tout est valide (pseudo, mdp, mail)
+		if($tab["mail"] && $tab["mdp"]){ //tout est valide (pseudo, mdp, mail)
 
 		// DEBUT VALIDE
 			try {
@@ -102,8 +102,8 @@ if($form_valide){
 
 
 	function valider($mail, $mdp1, $mdp2){ //renvoit un tableau associatif booléen qui valide ou non chaque entrée (mail valide ? etc)
-		global $bdd;
-		connexionBDD();
+
+		$bdd = connexionBDD();
 		$result=array(	"mail"=>"false",
 						"mdp"=>"false");
 
@@ -122,6 +122,7 @@ if($form_valide){
 
 		//mdp
 		$result["mdp"]=($mdp1==$mdp2);
+
 
 		return $result;
 	}
