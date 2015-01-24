@@ -22,6 +22,9 @@ ou de fin (pour terminer) sont mises a jour avec le timestamp correspondant au m
 	require_once('VueTODOListe.php');
 	require_once('ModeleTODOListe.php');
 
+	//connexion à la bdd
+	$bdd = connexionBDD();
+
 	//récupération du prenom et du nom du membre depuis la bdd
 
 	$prenom = "jean";
@@ -37,8 +40,20 @@ ou de fin (pour terminer) sont mises a jour avec le timestamp correspondant au m
 	debutTableau();
 		titreTableauTodoList();
 		echo('<td>');
-		$taches = getTaches();
-		var_dump($taches);
+		//debug
+		$idUtilisateur = 1;
+		//if(isset($_SESSION['id'])){
+			//$idUtilisateur = $_SESSION['id'];
+
+
+			//recupere toutes les taches de l'utilisateur connecté
+			$taches = getTaches($idUtilisateur);
+			var_dump($taches);
+		/*}else{
+			errNonConnecte();
+		}*/
+		
+		
 		echo('</td>');
 
 
