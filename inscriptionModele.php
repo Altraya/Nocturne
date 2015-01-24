@@ -1,8 +1,12 @@
 <?php
 	//require_once("VuePrincipale.php");
-	require_once("ModelePrincipale.php");
+	require_once('config.php');
+	require_once("ModelePrincipale.class.php");
 	require_once("inscriptionVue.php");
 	$bdd = connexionBDD();
+
+	$ModelePrincipale = new ModelePrincipale($bdd);
+
 	$token = sha1(uniqid('auth',true));
 	$_SESSION['token'] = $token;
 	$submited=isset($_POST["valider_form"]);
