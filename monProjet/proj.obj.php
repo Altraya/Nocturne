@@ -7,8 +7,10 @@
 	{
 		private $progress;		//Avancée du projet en %
 
-		public function __construct()
+		//$n : progression du projet
+		public function __construct($n)
 		{
+			$this->progress = $n;
 		}
 
 		//Renvoie la durée
@@ -44,13 +46,15 @@
 							<th>Heure début</th>
 							<th>Heure fin</th>';
 
-			for($i = 0; $i < $length; $i++)
+			for($i = 0; $i < $this->getLength(); $i++)
 			{
-				$html .= '	<th class="hourSpan">' . formatHours($length + $i) . 'h</th>';
+				$html .= '	<th class="hourSpan">' . $this->formatHours($this->getLength() + $i) . 'h</th>';
 			}
 			
 			$html .= '		<th colspan="4" class="actionTag">Actions</th>
 						</tr>';
+
+			return $html;
 		}
 
 		//Renvoie l'heure $n au format H24 précédée d'un 0 si nécéssaire, pour l'affichage
@@ -67,7 +71,7 @@
 
 		public function setProgress($n)
 		{
-			$progress = $n;
+			$this->progress = $n;
 		}
 	}
 
