@@ -18,6 +18,7 @@
 		return $data;
 	}
 
+
 	function recupereTauxAvancement(){
 		$data = array();
 
