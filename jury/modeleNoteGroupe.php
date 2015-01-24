@@ -6,7 +6,7 @@ require_once('../ModelePrincipale.php');
 function recuperationCategories()
 {
 	$data = array();
-	connexionBDD($bdd);
+	$bdd = connexionBDD();
 	$query = $bdd->prepare("SELECT * FROM ref_category_cat");
 	$query->execute();
 	while ($donnees = $query->fetch(PDO::FETCH_ASSOC)) {
@@ -19,7 +19,7 @@ function recuperationCategories()
 function recuperationItems($idCategorie)
 {
 	$data = array();
-	connexionBDD($bdd);
+	$bdd = connexionBDD();
 	$query = $bdd->prepare("SELECT * FROM ref_item_itm INNER JOIN ref_category_cat ON FK_CAT=PK_CAT WHERE FK_CAT = ".$idCategorie);
 	$query->execute();
 	while ($donnees = $query->fetch(PDO::FETCH_ASSOC)) {
@@ -27,5 +27,11 @@ function recuperationItems($idCategorie)
 		}
 	return $data;
 }
+
+function recupererTitre()
+{
+	
+}
+
 
 ?>
