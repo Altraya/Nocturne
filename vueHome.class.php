@@ -99,7 +99,7 @@ class vueHome{
 
 
     function errMdp(){
-        echo("Erreur : Vous avez saisi le mauvais mot de passe");
+        echo('<script> alert("Mauvais mot de passe, reessayez"); </script>');
+        header('Location: http://localhost/Nocturne/home.php');        
     }
 };
-?>
