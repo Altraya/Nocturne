@@ -15,11 +15,12 @@
 				    <title>Accueil</title>
 
 				    <!-- Bootstrap -->
-				    <link href='/css/bootstrap.css' rel='stylesheet'>
+				    <link href='../css/bootstrap.css' rel='stylesheet'>
+				    <link href='css/bootstrap.css' rel='stylesheet'>
 				        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 				    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'></script>
 				    <!-- Include all compiled plugins (below), or include individual files as needed -->
-				    <script src='/js/bootstrap.min.js'></script>
+				    <script src='js/bootstrap.min.js'></script>
 
 				    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 				    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,7 +37,7 @@
 
 //demarre un tableau
 function debutTableau(){
-	echo('<table>');
+	echo('<table class="table">');
 }
 
 //ferme un tableau
@@ -67,11 +68,7 @@ function creationNavbar(){
 			        <li class="dropdown">
 			        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jury<span class="caret"></span></a>
 			        	<ul class="dropdown-menu" role="menu">
-			        	';
-		foreach ($data as $key => $value) {
-			$vue.='<li><a href="./jury/NoteGroupe.php?id="'.$value["PK_GRP"].'>'.$value["GRP_LIB"].'</a></li>';
-		}
-			        $vue.='
+			        	
 			        	</ul>
 
 			        </li>
